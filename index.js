@@ -1,28 +1,22 @@
-var _ = require('lodash')
-var t = {}
-t.average = require('./average')
-t.sum = require('./sum')
-t.median = require('./median')
-t.min = require('./min')
-t.max = require('./max')
-t.deviation = require('./deviation')
-t.variance = require('./variance')
-t.count = require('./count')
+var average = require('turf-average')
+var sum = require('turf-sum')
+var median = require('turf-median')
+var min = require('turf-min')
+var max = require('turf-max')
+var deviation = require('turf-deviation')
+var variance = require('turf-variance')
+var count = require('turf-count')
+var turf = {}
+turf.average = average
+turf.sum = sum
+turf.median = median
+turf.min = min
+turf.max = max
+turf.deviation = deviation
+turf.variance = variance
+turf.count = count
 
-module.exports = function(polygons, points, aggregations, done){
-  function isAggregationOperation(operation) {
-    return operation === 'average' ||
-      operation === 'sum' ||
-      operation === 'median' ||
-      operation === 'min' ||
-      operation === 'max' ||
-      operation === 'deviation' ||
-      operation === 'variance' ||
-      operation === 'count';
-  }
-
-  done = done || function () {};
-
+module.exports = function(polygons, points, aggregations){
   for (var i = 0, len = aggregations.length; i < len; i++) {
     var agg = aggregations[i],
       operation = agg.aggregation,
@@ -30,17 +24,26 @@ module.exports = function(polygons, points, aggregations, done){
 
     if (isAggregationOperation(operation)) {
       if (operation === 'count') {
-        polygons = t[operation](polygons, points, agg.outField);
+        polygons = turf[operation](polygons, points, agg.outField);
       } else {
-        polygons = t[operation](polygons, points, agg.inField, agg.outField);
+        polygons = turf[operation](polygons, points, agg.inField, agg.outField);
       }
     } else {
       unrecognizedError = new Error('"'+ operation +'" is not a recognized aggregation operation.');
-      done(err)
       return err;
     }
   }
 
-  done(null, polygons)
   return polygons;
+}
+
+function isAggregationOperation(operation) {
+  return operation === 'average' ||
+    operation === 'sum' ||
+    operation === 'median' ||
+    operation === 'min' ||
+    operation === 'max' ||
+    operation === 'deviation' ||
+    operation === 'variance' ||
+    operation === 'count';
 }
