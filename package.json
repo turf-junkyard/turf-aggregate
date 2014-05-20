@@ -1,0 +1,30 @@
+{
+  "name": "turf-aggregate",
+  "version": "0.0.1",
+  "description": "turf aggregate module",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morganherlocker/turf-aggregate.git"
+  },
+  "keywords": [
+    "turf",
+    "aggregate",
+    "points",
+    "geojson",
+    "polygons",
+    "stats"
+  ],
+  "author": "morganherlocker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morganherlocker/turf-aggregate/issues"
+  },
+  "homepage": "https://github.com/morganherlocker/turf-aggregate",
+  "devDependencies": {
+    "tape": "^2.13.1"
+  }
+}
