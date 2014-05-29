@@ -5,7 +5,7 @@ turf-aggregate
 Takes a set of polygons, a set of points, and an array of aggregations, then perform them. Sum, average, count, min, max, and deviation are  supported.
 
 ```javascript
-var t = require('turf-aggregate')
+var aggregate = require('turf-aggregate')
 var point = require('turf-point')
 var polygon = require('turf-polygon')
 var featurecollection =  require('turf-featurecollection')
