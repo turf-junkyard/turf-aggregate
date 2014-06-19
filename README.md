@@ -86,6 +86,5 @@ var aggregations = [
 
 var polys = aggregate(polyFC, ptFC, aggregations)
 
- console.log(polys)
+console.log(polys)
 ```
-=======
