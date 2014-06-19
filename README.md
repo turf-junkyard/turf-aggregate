@@ -4,6 +4,28 @@ turf-aggregate
 
 Takes a set of polygons, a set of points, and an array of aggregations, then perform them. Sum, average, count, min, max, and deviation are  supported.
 
+###Install
+
+```sh
+npm install turf-aggregate
+```
+
+###Parameters
+
+|name|desc|
+|---|---|
+|polygonFC|a FeatureCollection containing Polygons|
+|pointFC|a FeatureCollection containing Points|
+|aggregations|an array of aggregation objects (options in the example below)|
+
+###Usage
+
+```js
+aggregate(polygonFC, pointFC, aggregations)
+```
+
+###Example
+
 ```javascript
 var t = require('turf-aggregate')
 var point = require('turf-point')
