@@ -12,7 +12,7 @@ npm install turf-aggregate
 
 ###Parameters
 
-|name|desc|
+|name|description|
 |---|---|
 |polygonFC|a FeatureCollection containing Polygons|
 |pointFC|a FeatureCollection containing Points|

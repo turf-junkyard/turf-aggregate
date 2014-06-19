@@ -25,19 +25,19 @@
   },
   "homepage": "https://github.com/morganherlocker/turf-aggregate",
   "devDependencies": {
-    "tape": "^2.13.1",
+    "tape": "^2.13.3",
     "turf-featurecollection": "^0.1.0",
-    "turf-point": "^0.1.0",
-    "turf-polygon": "^0.1.0"
+    "turf-point": "^0.1.1",
+    "turf-polygon": "^0.1.1"
   },
   "dependencies": {
-    "turf-average": "0.0.1",
-    "turf-count": "0.0.1",
-    "turf-deviation": "0.0.1",
-    "turf-max": "0.0.1",
-    "turf-median": "0.0.1",
-    "turf-min": "0.0.1",
-    "turf-sum": "0.0.1",
-    "turf-variance": "0.0.1"
+    "turf-average": "0.0.2",
+    "turf-count": "0.0.4",
+    "turf-deviation": "0.0.2",
+    "turf-max": "0.0.3",
+    "turf-median": "0.0.2",
+    "turf-min": "0.0.2",
+    "turf-sum": "0.0.2",
+    "turf-variance": "0.0.2"
   }
 }
