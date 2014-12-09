@@ -1,20 +1,20 @@
-var average = require('turf-average')
-var sum = require('turf-sum')
-var median = require('turf-median')
-var min = require('turf-min')
-var max = require('turf-max')
-var deviation = require('turf-deviation')
-var variance = require('turf-variance')
-var count = require('turf-count')
-var turf = {}
-turf.average = average
-turf.sum = sum
-turf.median = median
-turf.min = min
-turf.max = max
-turf.deviation = deviation
-turf.variance = variance
-turf.count = count
+var average = require('turf-average');
+var sum = require('turf-sum');
+var median = require('turf-median');
+var min = require('turf-min');
+var max = require('turf-max');
+var deviation = require('turf-deviation');
+var variance = require('turf-variance');
+var count = require('turf-count');
+var operations = {};
+operations.average = average;
+operations.sum = sum;
+operations.median = median;
+operations.min = min;
+operations.max = max;
+operations.deviation = deviation;
+operations.variance = variance;
+operations.count = count;
 
 module.exports = function(polygons, points, aggregations){
   for (var i = 0, len = aggregations.length; i < len; i++) {
@@ -24,13 +24,12 @@ module.exports = function(polygons, points, aggregations){
 
     if (isAggregationOperation(operation)) {
       if (operation === 'count') {
-        polygons = turf[operation](polygons, points, agg.outField);
+        polygons = operations[operation](polygons, points, agg.outField);
       } else {
-        polygons = turf[operation](polygons, points, agg.inField, agg.outField);
+        polygons = operations[operation](polygons, points, agg.inField, agg.outField);
       }
     } else {
-      unrecognizedError = new Error('"'+ operation +'" is not a recognized aggregation operation.');
-      return err;
+      return new Error('"'+ operation +'" is not a recognized aggregation operation.');
     }
   }
 
