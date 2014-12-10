@@ -1,5 +1,5 @@
 var aggregate = require('./');
-var Benchmark = require('Benchmark');
+var Benchmark = require('benchmark');
 var fs = require('fs');
 var polygon = require('turf-polygon');
 var point = require('turf-point');
