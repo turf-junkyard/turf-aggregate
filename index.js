@@ -16,6 +16,77 @@ operations.deviation = deviation;
 operations.variance = variance;
 operations.count = count;
 
+/**
+* Takes a set of polygons, a set of points, and an array of aggregations, then performs them. Sum, average, count, min, max, and deviation are supported.
+*
+* @module turf/aggregate
+* @param {FeatureCollection} polygonFC - a GeoJSON FeatureCollection containing Polygons
+* @param {FeatureCollection} pointFC - a FeatureColelction containing Points
+* @param {Array} aggregations - an array of aggregation objects
+* @return {FeatureCollection} polys - a FeatureCollection containing polygons with specified aggregation statistics as attributes
+* @example
+* var aggregate = require('turf-aggregate')
+* var point = require('turf-point')
+* var polygon = require('turf-polygon')
+*var featurecollection =  require('turf-featurecollection')
+*
+* var poly1 = polygon([[[0,0],[10,0],[10,10],[0,10]]])
+* var poly2 = polygon([[[10,0],[20,10],[20,20], [20,0]]])
+* var polyFC = featurecollection([poly1, poly2])
+* var pt1 = point(5,5, {population: 200})
+* var pt2 = point(1,3, {population: 600})
+* var pt3 = point(14,2, {population: 100})
+* var pt4 = point(13,1, {population: 200})
+* var pt5 = point(19,7, {population: 300})
+* var ptFC = featurecollection([pt1, pt2, pt3, pt4, pt5])
+* var aggregations = [
+*   {
+*     aggregation: 'sum',
+*     inField: 'population',
+*     outField: 'pop_sum'
+*   },
+*   {
+*     aggregation: 'average',
+*     inField: 'population',
+*     outField: 'pop_avg'
+*   },
+*   {
+*     aggregation: 'median',
+*     inField: 'population',
+*     outField: 'pop_median'
+*   },
+*   {
+*     aggregation: 'min',
+*     inField: 'population',
+*     outField: 'pop_min'
+*   },
+*   {
+*     aggregation: 'max',
+*     inField: 'population',
+*     outField: 'pop_max'
+*   },
+*   {
+*     aggregation: 'deviation',
+*     inField: 'population',
+*     outField: 'pop_deviation'
+*   },
+*   {
+*     aggregation: 'variance',
+*     inField: 'population',
+*     outField: 'pop_variance'
+*   },
+*   {
+*     aggregation: 'count',
+*     inField: '',
+*     outField: 'point_count'
+*   }
+* ]
+* 
+* var polys = aggregate(polyFC, ptFC, aggregations)
+* 
+* console.log(polys)
+*/
+
 module.exports = function(polygons, points, aggregations){
   for (var i = 0, len = aggregations.length; i < len; i++) {
     var agg = aggregations[i],
