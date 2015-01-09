@@ -25,20 +25,15 @@ operations.count = count;
 * @param {Array} aggregations - an array of aggregation objects
 * @return {FeatureCollection} polys - a FeatureCollection containing polygons with specified aggregation statistics as attributes
 * @example
-* var aggregate = require('turf-aggregate')
-* var point = require('turf-point')
-* var polygon = require('turf-polygon')
-*var featurecollection =  require('turf-featurecollection')
-*
-* var poly1 = polygon([[[0,0],[10,0],[10,10],[0,10]]])
-* var poly2 = polygon([[[10,0],[20,10],[20,20], [20,0]]])
-* var polyFC = featurecollection([poly1, poly2])
-* var pt1 = point(5,5, {population: 200})
-* var pt2 = point(1,3, {population: 600})
-* var pt3 = point(14,2, {population: 100})
-* var pt4 = point(13,1, {population: 200})
-* var pt5 = point(19,7, {population: 300})
-* var ptFC = featurecollection([pt1, pt2, pt3, pt4, pt5])
+* var poly1 = turf.polygon([[[0,0],[10,0],[10,10],[0,10],[0,0]]])
+* var poly2 = turf.polygon([[[10,0],[20,10],[20,20], [20,0]]])
+* var polyFC = turf.featurecollection([poly1, poly2])
+* var pt1 = turf.point(5,5, {population: 200})
+* var pt2 = turf.point(1,3, {population: 600})
+* var pt3 = turf.point(14,2, {population: 100})
+* var pt4 = turf.point(13,1, {population: 200})
+* var pt5 = turf.point(19,7, {population: 300})
+* var ptFC = turf.featurecollection([pt1, pt2, pt3, pt4, pt5])
 * var aggregations = [
 *   {
 *     aggregation: 'sum',
@@ -84,7 +79,7 @@ operations.count = count;
 * 
 * var polys = aggregate(polyFC, ptFC, aggregations)
 * 
-* console.log(polys)
+* //=polys
 */
 
 module.exports = function(polygons, points, aggregations){
