@@ -20,10 +20,10 @@ operations.count = count;
 * Takes a set of polygons, a set of points, and an array of aggregations, then performs them. Sum, average, count, min, max, and deviation are supported.
 *
 * @module turf/aggregate
-* @param {FeatureCollection} polygonFC - a GeoJSON FeatureCollection containing Polygons
-* @param {FeatureCollection} pointFC - a FeatureCollection containing Points
-* @param {Array} aggregations - an array of aggregation objects
-* @return {FeatureCollection} polys - a FeatureCollection containing polygons with specified aggregation statistics as attributes
+* @param {FeatureCollection} polygons a FeatureCollection of {@link Polygon} features
+* @param {FeatureCollection} points a FeatureCollection of {@link Point} features
+* @param {Array} aggregations an array of aggregation objects
+* @return {FeatureCollection} a FeatureCollection of {@link Polygon} features with properties listed as `outField` values in `aggregations`
 * @example
 * var polygons = turf.featurecollection([
 *   turf.polygon([[[0,0],[10,0],[10,10],[0,10],[0,0]]]),
