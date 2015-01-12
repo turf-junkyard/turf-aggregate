@@ -26,14 +26,14 @@ operations.count = count;
 * @return {FeatureCollection} a FeatureCollection of {@link Polygon} features with properties listed as `outField` values in `aggregations`
 * @example
 * var polygons = turf.featurecollection([
-*   turf.polygon([[[0,0],[10,0],[10,10],[0,10],[0,0]]]),
-*   turf.polygon([[[10,0],[20,10],[20,20], [20,0]]])]);
+*   turf.polygon([[[1.669921,48.632908],[1.669921,49.382372],[3.636474,49.382372],[3.636474,48.632908],[1.669921,48.632908]]]),
+*   turf.polygon([[[2.230224,47.85003],[2.230224,48.611121],[4.361572,48.611121],[4.361572,47.85003],[2.230224,47.85003]]])]);
 * var points = turf.featurecollection([
-*   turf.point(5,5, {population: 200}),
-*   turf.point(1,3, {population: 600}),
-*   turf.point(14,2, {population: 100}),
-*   turf.point(13,1, {population: 200}),
-*   turf.point(19,7, {population: 300})]);
+*   turf.point(2.054443,49.138596, {population: 200}),
+*   turf.point(3.065185,48.850258, {population: 600}),
+*   turf.point(2.329101,48.79239, {population: 100}),
+*   turf.point(2.614746,48.334343, {population: 200}),
+*   turf.point(3.416748,48.056053, {population: 300})]);
 * var aggregations = [
 *   {
 *     aggregation: 'sum',
