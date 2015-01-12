@@ -78,8 +78,10 @@ operations.count = count;
 * ];
 *
 * var aggregated = turf.aggregate(polygons, points, aggregations);
+*
+* var result = turf.featurecollection(points.features.concat(aggregated.features));
 * 
-* //=aggregated
+* //=result
 */
 
 module.exports = function(polygons, points, aggregations){
