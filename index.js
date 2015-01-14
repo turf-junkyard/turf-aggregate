@@ -80,7 +80,7 @@ operations.count = count;
 * var aggregated = turf.aggregate(polygons, points, aggregations);
 *
 * var result = turf.featurecollection(points.features.concat(aggregated.features));
-* 
+*
 * //=result
 */
 
@@ -97,12 +97,12 @@ module.exports = function(polygons, points, aggregations){
         polygons = operations[operation](polygons, points, agg.inField, agg.outField);
       }
     } else {
-      return new Error('"'+ operation +'" is not a recognized aggregation operation.');
+      throw new Error('"'+ operation +'" is not a recognized aggregation operation.');
     }
   }
 
   return polygons;
-}
+};
 
 function isAggregationOperation(operation) {
   return operation === 'average' ||
