@@ -26,8 +26,21 @@ operations.count = count;
 * @return {FeatureCollection} a FeatureCollection of {@link Polygon} features with properties listed as `outField` values in `aggregations`
 * @example
 * var polygons = turf.featurecollection([
-*   turf.polygon([[[1.669921,48.632908],[1.669921,49.382372],[3.636474,49.382372],[3.636474,48.632908],[1.669921,48.632908]]]),
-*   turf.polygon([[[2.230224,47.85003],[2.230224,48.611121],[4.361572,48.611121],[4.361572,47.85003],[2.230224,47.85003]]])]);
+*   turf.polygon([[
+*     [1.669921, 48.632908],
+*     [1.669921, 49.382372],
+*     [3.636474, 49.382372],
+*     [3.636474, 48.632908],
+*     [1.669921, 48.632908]]
+*   ]),
+*   turf.polygon([[
+*     [2.230224, 47.85003],
+*     [2.230224, 48.611121],
+*     [4.361572, 48.611121],
+*     [4.361572, 47.85003],
+*     [2.230224, 47.85003]]
+*   ])
+* ]);
 * var points = turf.featurecollection([
 *   turf.point(2.054443,49.138596, {population: 200}),
 *   turf.point(3.065185,48.850258, {population: 600}),
@@ -77,9 +90,11 @@ operations.count = count;
 *   }
 * ];
 *
-* var aggregated = turf.aggregate(polygons, points, aggregations);
+* var aggregated = turf.aggregate(
+*   polygons, points, aggregations);
 *
-* var result = turf.featurecollection(points.features.concat(aggregated.features));
+* var result = turf.featurecollection(
+*   points.features.concat(aggregated.features));
 *
 * //=result
 */
