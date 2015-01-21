@@ -42,11 +42,11 @@ operations.count = count;
 *   ])
 * ]);
 * var points = turf.featurecollection([
-*   turf.point(2.054443,49.138596, {population: 200}),
-*   turf.point(3.065185,48.850258, {population: 600}),
-*   turf.point(2.329101,48.79239, {population: 100}),
-*   turf.point(2.614746,48.334343, {population: 200}),
-*   turf.point(3.416748,48.056053, {population: 300})]);
+*   turf.point([2.054443,49.138596], {population: 200}),
+*   turf.point([3.065185,48.850258], {population: 600}),
+*   turf.point([2.329101,48.79239], {population: 100}),
+*   turf.point([2.614746,48.334343], {population: 200}),
+*   turf.point([3.416748,48.056053], {population: 300})]);
 * var aggregations = [
 *   {
 *     aggregation: 'sum',
