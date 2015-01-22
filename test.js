@@ -72,6 +72,5 @@ test('aggregate', function(t){
   t.ok(aggregated.features[1].properties.pop_deviation);
   t.ok(aggregated.features[0].properties.pop_variance);
   t.ok(aggregated.features[1].properties.pop_variance);
-
   t.end();
 });
