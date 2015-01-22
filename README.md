@@ -1,46 +1,49 @@
-turf-aggregate
-==============
+# turf-aggregate
+
 [![build status](https://secure.travis-ci.org/Turfjs/turf-aggregate.png)](http://travis-ci.org/Turfjs/turf-aggregate)
 
-Takes a set of polygons, a set of points, and an array of aggregations, then perform them. Sum, average, count, min, max, and deviation are  supported.
+turf aggregate module
 
-###Install
 
-```sh
-npm install turf-aggregate
-```
+### `turf.aggregate(polygons, points, aggregations)`
 
-###Parameters
+Calculates a series of aggregations for a set of Point features within a set of Polygon features. Sum, average, count, min, max, and deviation are supported.
 
-|name|description|
-|---|---|
-|polygonFC|a FeatureCollection containing Polygons|
-|pointFC|a FeatureCollection containing Points|
-|aggregations|an array of aggregation objects (options in the example below)|
 
-###Usage
+### Parameters
+
+| parameter      | type              | description                             |
+| -------------- | ----------------- | --------------------------------------- |
+| `polygons`     | FeatureCollection | a FeatureCollection of Polygon features |
+| `points`       | FeatureCollection | a FeatureCollection of Point features   |
+| `aggregations` | Array             | an array of aggregation objects         |
+
+
+### Example
 
 ```js
-aggregate(polygonFC, pointFC, aggregations)
-```
-
-###Example
-
-```javascript
-var aggregate = require('turf-aggregate')
-var point = require('turf-point')
-var polygon = require('turf-polygon')
-var featurecollection =  require('turf-featurecollection')
-
-var poly1 = polygon([[[0,0],[10,0],[10,10],[0,10]]])
-var poly2 = polygon([[[10,0],[20,10],[20,20], [20,0]]])
-var polyFC = featurecollection([poly1, poly2])
-var pt1 = point(5,5, {population: 200})
-var pt2 = point(1,3, {population: 600})
-var pt3 = point(14,2, {population: 100})
-var pt4 = point(13,1, {population: 200})
-var pt5 = point(19,7, {population: 300})
-var ptFC = featurecollection([pt1, pt2, pt3, pt4, pt5])
+var polygons = turf.featurecollection([
+  turf.polygon([[
+    [1.669921, 48.632908],
+    [1.669921, 49.382372],
+    [3.636474, 49.382372],
+    [3.636474, 48.632908],
+    [1.669921, 48.632908]]
+  ]),
+  turf.polygon([[
+    [2.230224, 47.85003],
+    [2.230224, 48.611121],
+    [4.361572, 48.611121],
+    [4.361572, 47.85003],
+    [2.230224, 47.85003]]
+  ])
+]);
+var points = turf.featurecollection([
+  turf.point([2.054443,49.138596], {population: 200}),
+  turf.point([3.065185,48.850258], {population: 600}),
+  turf.point([2.329101,48.79239], {population: 100}),
+  turf.point([2.614746,48.334343], {population: 200}),
+  turf.point([3.416748,48.056053], {population: 300})]);
 var aggregations = [
   {
     aggregation: 'sum',
@@ -82,9 +85,28 @@ var aggregations = [
     inField: '',
     outField: 'point_count'
   }
-]
+];
 
-var polys = aggregate(polyFC, ptFC, aggregations)
+var aggregated = turf.aggregate(
+  polygons, points, aggregations);
 
-console.log(polys)
+var result = turf.featurecollection(
+  points.features.concat(aggregated.features));
+
+//=result
 ```
+
+## Installation
+
+Requires [nodejs](http://nodejs.org/).
+
+```sh
+$ npm install turf-aggregate
+```
+
+## Tests
+
+```sh
+$ npm test
+```
+

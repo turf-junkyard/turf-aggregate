@@ -4,11 +4,12 @@
   "description": "turf aggregate module",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "doc": "dox -r < index.js | doxme --readme > README.md"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/morganherlocker/turf-aggregate.git"
+    "url": "https://github.com/Turfjs/turf-aggregate.git"
   },
   "keywords": [
     "turf",
@@ -21,24 +22,26 @@
   "author": "morganherlocker",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/morganherlocker/turf-aggregate/issues"
+    "url": "https://github.com/Turfjs/turf-aggregate/issues"
   },
-  "homepage": "https://github.com/morganherlocker/turf-aggregate",
+  "homepage": "https://github.com/Turfjs/turf-aggregate",
   "devDependencies": {
     "benchmark": "^1.0.0",
     "tape": "^2.13.3",
-    "turf-featurecollection": "^0.1.0",
-    "turf-point": "^0.1.1",
-    "turf-polygon": "^0.1.1"
+    "turf-featurecollection": "^1.0.0",
+    "turf-point": "^2.0.0",
+    "turf-polygon": "^1.0.1",
+    "dox": "^0.6.1",
+    "doxme": "^1.4.2"
   },
   "dependencies": {
-    "turf-average": "0.1.1",
-    "turf-count": "0.0.4",
-    "turf-deviation": "0.0.2",
-    "turf-max": "0.0.3",
-    "turf-median": "0.0.2",
-    "turf-min": "0.0.2",
-    "turf-sum": "0.0.2",
-    "turf-variance": "0.0.2"
+    "turf-average": "^1.1.0",
+    "turf-count": "^1.0.1",
+    "turf-deviation": "^1.0.0",
+    "turf-max": "^1.0.0",
+    "turf-median": "^1.0.1",
+    "turf-min": "^1.0.0",
+    "turf-sum": "^1.0.0",
+    "turf-variance": "^1.0.0"
   }
 }
