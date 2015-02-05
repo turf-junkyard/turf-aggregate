@@ -20,6 +20,7 @@ operations.count = count;
 * Calculates a series of aggregations for a set of {@link Point} features within a set of {@link Polygon} features. Sum, average, count, min, max, and deviation are supported.
 *
 * @module turf/aggregate
+* @category aggregation
 * @param {FeatureCollection} polygons a FeatureCollection of {@link Polygon} features
 * @param {FeatureCollection} points a FeatureCollection of {@link Point} features
 * @param {Array} aggregations an array of aggregation objects
