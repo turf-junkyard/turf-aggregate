@@ -21,10 +21,10 @@ operations.count = count;
 *
 * @module turf/aggregate
 * @category aggregation
-* @param {FeatureCollection} polygons a FeatureCollection of {@link Polygon} features
-* @param {FeatureCollection} points a FeatureCollection of {@link Point} features
+* @param {FeatureCollection<Polygon>} polygons polygons with values on which to aggregate
+* @param {FeatureCollection<Point>} points points to be aggregated
 * @param {Array} aggregations an array of aggregation objects
-* @return {FeatureCollection} a FeatureCollection of {@link Polygon} features with properties listed as `outField` values in `aggregations`
+* @return {FeatureCollection<Polygon>} polygons with properties listed based on `outField` values in `aggregations`
 * @example
 * var polygons = {
 *   "type": "FeatureCollection",
