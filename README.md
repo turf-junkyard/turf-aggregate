@@ -14,9 +14,9 @@ Calculates a series of aggregations for a set of Point features within a set of 
 
 | parameter      | type              | description                             |
 | -------------- | ----------------- | --------------------------------------- |
-| `polygons`     | FeatureCollection<Polygon> | a FeatureCollection of Polygon features |
-| `points`       | FeatureCollection<Point> | a FeatureCollection of Point features   |
-| `aggregations` | Array<Object>             | an array of aggregation objects         |
+| `polygons`     | FeatureCollection | a FeatureCollection of Polygon features |
+| `points`       | FeatureCollection | a FeatureCollection of Point features   |
+| `aggregations` | Array             | an array of aggregation objects         |
 
 
 ### Example
