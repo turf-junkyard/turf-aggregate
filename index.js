@@ -17,7 +17,7 @@ operations.variance = variance;
 operations.count = count;
 
 /**
-* Calculates a series of aggregations for a set of {@link Point} features within a set of {@link Polygon} features. Sum, average, count, min, max, and deviation are supported.
+* Calculates a series of aggregations for a set of {@link Point|points} within a set of {@link Polygon|polygons}. Sum, average, count, min, max, and deviation are supported.
 *
 * @module turf/aggregate
 * @category aggregation
