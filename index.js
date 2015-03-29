@@ -165,7 +165,7 @@ operations.count = count;
 * //=result
 */
 
-module.exports = function(polygons, points, aggregations){
+module.exports = function(polygons, points, aggregations) {
   for (var i = 0, len = aggregations.length; i < len; i++) {
     var agg = aggregations[i],
       operation = agg.aggregation;
