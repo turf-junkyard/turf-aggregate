@@ -168,8 +168,7 @@ operations.count = count;
 module.exports = function(polygons, points, aggregations){
   for (var i = 0, len = aggregations.length; i < len; i++) {
     var agg = aggregations[i],
-      operation = agg.aggregation,
-      unrecognizedError;
+      operation = agg.aggregation;
 
     if (isAggregationOperation(operation)) {
       if (operation === 'count') {
